@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="container">
+    <div class="row">
+       <div class="col-md-1">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{product.img.url}}" alt="Card image cap"style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">Description:-</p>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{product.desc}}</li>
+    <li class="list-group-item">rupees {{product.price}}</li>
+
+  </ul>
+  <div class="card-body">
+   <a class="btn btn-warning" href="{% url 'myapp:update' product.id %}">Update</a>
+  <a class="btn btn-danger" href="{% url 'myapp:delete' product.id %}">Delete</a>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}
